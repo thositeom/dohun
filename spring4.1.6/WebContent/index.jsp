@@ -14,5 +14,14 @@
 	</form>
 	<div id="resultView" ></div>
 	
+	<div style="margin-top: 30px">
+		<form action="/board/insertBoard.do">
+			boardId :<input type="text" id=boardId name="boardId">  					
+			domainId :<input type="text" id="domainId" name="domainId">
+			<input type="submit" value="¹öÆ°">
+		</form>
+	</div>
+	
+	
 </body>
 </html>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.spring.board.mapper">
+    
+    <insert id="insertBoard" parameterType="com.spring.board.vo.boardVO" >
+    	INSERT INTO BOARD ( 
+           BOARD_ID,          
+           
+           DOMAIN_ID  
+       ) 
+       VALUES 
+       ( 
+           #{boardId},  
+          
+           #{domainId}  
+       ) 
+    </insert>
+    <update id="updateBoard" parameterType="com.spring.board.vo.boardVO" >
+    	UPDATE TEST SET PWD = #{pwd} WHERE ID = #{id}  
+    </update>
+	<delete id="deleteBoard" parameterType="com.spring.board.vo.boardVO" >
+		DELETE TEST WHERE ID = #{id}
+	</delete>    
+    <select id="selectBoard" parameterType="com.spring.board.vo.boardVO" resultType="com.spring.board.vo.boardVO">
+        SELECT * FROM TEST WHERE ID = #{id}
+    </select>
+    <select id="selectListBoard" resultType="com.spring.board.vo.boardVO">
+        SELECT * FROM TEST
+    </select>
+</mapper>
+
+
+
+
