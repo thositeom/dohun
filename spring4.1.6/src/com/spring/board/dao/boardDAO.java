@@ -26,8 +26,8 @@ public class boardDAO {
 	}
 	
 	//R
-	public List selectBoardDAOList(boardVO vo) throws Exception {
-		return sessionTemplate.selectList("com.spring.board.mapper.insertBoard", vo);
+	public List selectBoardDAOList() throws Exception {
+		return sessionTemplate.selectList("com.spring.board.mapper.selectBoardList");
 	}
 	
 	//U

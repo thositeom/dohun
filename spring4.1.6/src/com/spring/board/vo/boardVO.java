@@ -4,7 +4,7 @@ public class boardVO {
 
 	private String boardId;       //게시판 아이디
 	private String boardRid;      //실게시판 아이디
-	private int domainId;      //도메인ID
+	private String domainId;      //도메인ID
 	private String boardActive;   //게시판 사용여부
 	private String boardSys;      //게시판사용 시스템코드
 	
@@ -62,11 +62,11 @@ public class boardVO {
 		this.boardRid = boardRid;
 	}
 
-	public int getDomainId() {
+	public String getDomainId() {
 		return domainId;
 	}
 
-	public void setDomainId(int domainId) {
+	public void setDomainId(String domainId) {
 		this.domainId = domainId;
 	}
 

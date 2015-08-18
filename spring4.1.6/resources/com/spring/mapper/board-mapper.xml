@@ -2,31 +2,83 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.spring.board.mapper">
     
+	<resultMap id="boardMap" type="com.spring.board.vo.boardVO">
+	  <id property="boardId" column="BOARD_ID" />
+	  <result property="boardRid" column="BOARD_RID"/>
+	  <result property="domainId" column="DOMAIN_ID"/>
+	  <result property="boardActive" column="BOARD_ACTIVE"/>
+	  <result property="boardSys" column="BOARD_SYS"/>
+	  
+	  <result property="owntblYn" column="OWNTBL_YN"/>
+	  <result property="owntblGix" column="OWNTBL_FIX"/>
+	  <result property="boardType" column="BOARD_TYPE"/>
+	  <result property="mergeType" column="MERGE_TYPE"/>
+	  <result property="funcYns" column="FUNC_YNS"/>
+	  
+	  <result property="bugaYns" column="BUGA_YNS"/>
+	  <result property="listYns" column="LIST_YNS"/>
+	  <result property="readYns" column="READ_YNS"/>
+	  <result property="srchYns" column="SRCH_YNS"/>
+	  <result property="ttlYns" column="TTL_YNS"/>
+	  
+	  <result property="ttlLens" column="TTL_LENS"/>
+	  <result property="termFlag" column="TERM_FLAG"/>
+	  <result property="boardSkin" column="BOARD_SKIN"/>
+	  <result property="raiseColor" column="RAISE_COLOR"/>
+	  <result property="raiseCnt" column="RAISE_CNT"/>
+	  
+	  <result property="newTerm" column="NEW_TERM"/>
+	  <result property="maxFileCnt" column="MAX_FILE_CNT"/>
+	  <result property="maxFileSize" column="MAX_FILE_SIZE"/>
+	  <result property="maxFileDown" column="MAX_FILE_DOWN"/>
+	  <result property="listSetCnt" column="LIST_SET_CNT"/>
+	  
+	  <result property="badStdCnt" column="BAD_STD_CNT"/>
+	  <result property="miniTrgtWin" column="MINI_TRGT_WIN"/>
+	  <result property="miniTrgtUrl" column="MINI_TRGT_URL"/>
+	  <result property="extnClassNm" column="EXTN_CLASS_NM"/>
+	  <result property="boardWidth" column="BOARD_WIDTH"/>
+	  
+	  <result property="topHtml" column="TOP_HTML"/>
+	  <result property="bottomHtml" column="BOTTOM_HTML"/>
+	  <result property="boardBgPic" column="BOARD_BG_PIC"/>
+	  <result property="boardBgColor" column="BOARD_BG_COLOR"/>
+	  <result property="updUserId" column="UPD_USER_ID"/>
+	  
+	  <result property="updDatim" column="UPD_DATIM"/>
+	  
+	</resultMap>
+    
     <insert id="insertBoard" parameterType="com.spring.board.vo.boardVO" >
     	INSERT INTO BOARD ( 
            BOARD_ID,          
-           
+           BOARD_RID,
            DOMAIN_ID  
        ) 
        VALUES 
        ( 
-           #{boardId},  
-          
+           #{boardId},
+		   #{boardRid},
            #{domainId}  
        ) 
     </insert>
-    <update id="updateBoard" parameterType="com.spring.board.vo.boardVO" >
-    	UPDATE TEST SET PWD = #{pwd} WHERE ID = #{id}  
-    </update>
-	<delete id="deleteBoard" parameterType="com.spring.board.vo.boardVO" >
-		DELETE TEST WHERE ID = #{id}
-	</delete>    
+    
     <select id="selectBoard" parameterType="com.spring.board.vo.boardVO" resultType="com.spring.board.vo.boardVO">
         SELECT * FROM TEST WHERE ID = #{id}
     </select>
-    <select id="selectListBoard" resultType="com.spring.board.vo.boardVO">
-        SELECT * FROM TEST
+    
+    <select id="selectBoardList" resultMap="boardMap">
+        SELECT * FROM BOARD
     </select>
+    
+    <update id="updateBoard" parameterType="com.spring.board.vo.boardVO" >
+    	UPDATE TEST SET PWD = #{pwd} WHERE ID = #{id}  
+    </update>
+	
+	<delete id="deleteBoard" parameterType="com.spring.board.vo.boardVO" >
+		DELETE TEST WHERE ID = #{id}
+	</delete>    
+    
 </mapper>
 
 

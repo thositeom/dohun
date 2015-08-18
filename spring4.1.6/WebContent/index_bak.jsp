@@ -5,23 +5,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>index.page</title>
-<script type="text/javascript"
-	src="${pageContext.request.contextPath}/js/jquery-2.1.4.js"></script>
-<script type="text/javascript">
-	$(document).ready(function() {
-
-	});
-
-</script>
-
 </head>
 <body>
 	<form action="/index.do" method="post">
-		id :<input type="text" id="id" name="id" value=""> 
-		pwd :<input type="text" id="pwd" name="pwd" value=""> 
-		<input type="button" value="로그인" onClick='javascript:loginCheck();'>
+		id  :<input type="text" id="id" name="id">
+		pwd :<input type="text" id="pwd" name="pwd">
+		<input type="submit" value="버튼">
 	</form>
-
+	<div id="resultView" ></div>
+	
 	<div style="margin-top: 30px">
 		<form action="/board/insertBoard.do">
 			<input type="hidden" id="boardRid" name="boardRid">
@@ -31,7 +23,6 @@
 		</form>
 	</div>
 	
-
-
+	
 </body>
 </html>

@@ -1,5 +1,7 @@
 package com.spring.board.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -27,20 +29,25 @@ public class boardController {
 	public ModelAndView insertBoard(HttpServletRequest request, HttpServletResponse respons){
 		ModelAndView mav = new ModelAndView();
 		boardVO vo = new boardVO();
+		List listResult = null ;
 		
 		vo.setBoardId(request.getParameter("boardId"));
-		
-		vo.setDomainId(1);
+		vo.setBoardRid(request.getParameter("boardRid"));
+		vo.setDomainId(request.getParameter("domainId"));
 		
 		try {
-			System.out.println("check01");
-			boardService.insertBoard(vo);
-			System.out.println("checkEnd");
+			if(request.getParameter("boardId") != "" && request.getParameter("boardId") != null){
+				boardService.insertBoard(vo);
+			}
+			
+			listResult = (List) boardService.selectBoardList();
+			
 		} catch (Exception e) {
-			System.out.println("checkError");
 			e.printStackTrace();
 		}
-		mav.setViewName("board/board");
+
+		mav.addObject("listResult", listResult);
+		mav.setViewName("/board/board");
 		
 		return mav;
 	}
