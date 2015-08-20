@@ -9,9 +9,27 @@
 	src="${pageContext.request.contextPath}/js/jquery-2.1.4.js"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
-
+		
 	});
 
+	function loginCheck() {
+		$.ajax({
+			url: "/login/loginCheck.do",
+			dataType: "json",
+			type: "POST",
+			data:{
+				id: $("#id").val(),
+				pwd: $("#pwd").val()
+			},
+			success: function(result){
+				alert("success: " + result.id);
+			},
+			error: function(request,error){
+		        alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+		    }
+		});
+	}
+	
 </script>
 
 </head>
@@ -30,8 +48,7 @@
 			<input type="submit" value="¹öÆ°">
 		</form>
 	</div>
-	
-
+ 	<div id="result"></div>
 
 </body>
 </html>
