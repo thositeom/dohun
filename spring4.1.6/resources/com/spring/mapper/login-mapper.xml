@@ -1,9 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.spring.mybatis.mapper">
+<mapper namespace="com.spring.login.mapper">
 
-    <select id="selectMybatis" parameterType="com.spring.mybatis.vo.mybatisVO" resultType="com.spring.mybatis.vo.mybatisVO">
-    </select>
+	<insert id="insertUserPass" parameterType="com.spring.login.vo.userPassVO">
+		INSERT INTO USERPASS ( 
+           USER_ID, REG_NO, COM_NO, ORG_CD, EMP_NO, NM_KOR, STATE_FLAG, ORG_FLAG, LEVEL_CD, KIND_CD, 
+           TYPE_CD, GRADE_CD, LANG_KND, THEME_ID, MAIL_FLAG, BLOG_FLAG, MEMO_FLAG, DISK_FLAG, CHAT_FLAG, RCMD_USER_ID, 
+           MILE_TOT, NM_CHR, NM_ENG, NM_NIC, SEX_FLAG, BLOOD_TYPE, HOME_TEL, OFFC_TEL, MOBILE_TEL, FAX_NO, BIRTH_YMD, 
+           LUORSUN_FLAG, MARRY_YMD, EMAIL_ADDR, OPEN_FLAG, HOME_ZIP, HOME_ADDR1, HOME_ADDR2, OFFC_ZIP, OFFC_ADDR1, OFFC_ADDR2, 
+           USER_ICON, USER_INFO01, USER_INFO02, USER_INFO03, USER_INFO04, USER_INFO05, USER_INFO06, USER_INFO07, USER_INFO08, USER_INFO09,
+           USER_INFO10, LAST_LOGON, LAST_IP, REG_DATIM, UPD_USER_ID, UPD_DATIM,PAGE1ST_FLAG,PAGE1ST_URL,PIC_PATH,INTRO,UPDATE_REQUIRED,PHONE_TYPE,
+           DEVICE_ID,PUSH_TOKEN 
+       ) 
+       VALUES 
+       ( #userId,	#regNo#, #comNo#, #orgCd#, #empNo#, #nmKor#, #stateFlag#, #orgFlag#, #levelCd#, #kindCd#, #typeCd#, #gradeCd#, #langKnd#, 
+         #themeId#, #mailFlag#, #blogFlag#, #memoFlag#, #diskFlag#, #chatFlag#, #rcmdUserId#, #mileTot#, #nmChr#, #nmEng#, #nmNic#, 
+         #sexFlag#, #bloodType#, #homeTel#, #offcTel#, #mobileTel#, #faxNo#, #birthYmd#, #luorsunFlag#, #marryYmd#, #emailAddr#, #openFlag#, 
+         #homeZip#, #homeAddr1#, #homeAddr2#, #offcZip#,#offcAddr1#, 
+         #offcAddr2#, 
+         #userIcon#, 
+         #userInfo01#, 
+         #userInfo02#, 
+         #userInfo03#, 
+         #userInfo04#, 
+         #userInfo05#, 
+         #userInfo06#, 
+         #userInfo07#, 
+         #userInfo08#, 
+         #userInfo09#, 
+         #userInfo10#, 
+         #lastLogon#, 
+         #lastIp#, 
+         #regDatim#, 
+         #updUserId#, 
+         #updDatim#, 
+         #page1stFlag#, 
+         #page1stUrl#, 
+         #picPath#, 
+         #intro#, 
+         #updateRequired#, 
+         #phoneType#, 
+         #deviceId#, 
+         #pushToken# 
+       )	
+	</insert>
     
 </mapper>
 
